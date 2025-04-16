@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Template for designing your user experience
 
 This template uses React to build the frontend and Flask in the backend. The overall structure was created to support a user study from a starting page followed by instructions, the main experiment, and a final survey. Chrome is recommended. 
@@ -52,3 +53,7 @@ In this assignment we will focus on building the main page as the prototype. To 
 The code of this template is located at src/pages/main/main-task1.js. Some functionalities 
 are implemented as an example and data is recorded in the local database. You can change the database to store and organize your data while keeping the backend in Python. 
 Also, You may need to modify other files as well (e.g., .css files for styling, create new components, or pages if needed).  
+=======
+# explainable-ai-assignment-2
+Explainable AI Group Assignment 2 - Julia, Shaili, Asmitha
+>>>>>>> 67f3681c60f44b54f353e8eef7e32b30325b5e74

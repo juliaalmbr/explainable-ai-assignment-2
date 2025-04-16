@@ -6,14 +6,15 @@ import "./start.css";
 
 function StartContainer() {
     // let history = useHistory();
-    const [agree, setAgree] = useState(false);
-
-    const checkboxHandler = () => {
-      setAgree(!agree);
+    const withoutAI = () =>{ 
+      let path = '/#/Instructions';  // TO - DO Modify instr file for the pages without AI assistance
+      // history.push(path);
+      window.location.assign(path);
+      console.log('moving to instructions page')
     }
-  
-    const routeChange = () =>{ 
-      let path = '/#/Instructions'; 
+    
+    const withAI = () =>{ 
+      let path = '/#/Main1'; // TO - DO Modify withAI file for the pages with AI assistance
       // history.push(path);
       window.location.assign(path);
       console.log('moving to instructions page')
@@ -22,17 +23,28 @@ function StartContainer() {
     return (
       <div className="Home">
         <div className="lander">
-            <h1>Study title here</h1>
-            <p> This is the start page. Welcome to our study. </p>
+            <h1>AI-ASSISTED STUDENT TRACKER</h1>
+            <p> This tool is designed to help online instructors better understand
+                student engagement by automatically detecting facial expressions such as
+                confusion, boredom, or distraction during virtual classes. Using a deep learning
+                model, the system analyzes real-time video input to classify expressions and highlight
+                which students may need additional attention. Instructors can view ranked engagement
+                insights and explore visual explanations showing what facial features influenced each
+                prediction. This assistant aims to support more effective teaching by combining human
+                intuition and AI-driven insights</p>
 
-            <div>
-                <input type="checkbox" id="agree" onChange={checkboxHandler} />
-                <label htmlFor="agree"> I agree to the <b>terms and conditions</b></label>
+            <div className="label-container">
+                <label className="classification-label">Classification Tests: </label>
             </div>
 
-            <Button disabled={!agree} variant="btn btn-success" onClick={routeChange}>
-                Continue
-            </Button>
+            <div className="button-stack">
+                <button onClick={withoutAI}>
+                  Without AI Assistance
+                </button>
+                <button onClick={withAI}>
+                  With AI Assistance
+                </button>
+            </div>
         </div>
       </div>
       );

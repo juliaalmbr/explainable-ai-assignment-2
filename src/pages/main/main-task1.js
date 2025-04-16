@@ -126,85 +126,21 @@ function Main1Container() {
 
 
     return (
-      <>
-       {render ?
-
-            <div className="container">
-            <div className="title">Main experiment</div>
-            <div className="column-container"> 
-            <div className="left-column"> 
-                <p> This is how you load an image:</p>
-                <div className="img-frame">
-                    <img className="image-inner" src={baseImgUrl + currentImage}/>
-                </div>
-                <p> {imageCount + 1} / {totalImages} Images</p>
+        <div className="background">
+            <div className="video-grid">
+                <div className="video-box">1</div>
+                <div className="video-box">2</div>
+                <div className="video-box">3</div>
+                <div className="video-box">4</div>
+                <div className="video-box">5</div>
+                <div className="video-box">6</div>
             </div>
 
-            <div className="right-column"> 
-            <div className="instr">
-                <t> You can present the outcomes of the algorithms on this side:</t> 
-            </div>
-                
             
-            <Button className="btn-1"  onClick={()=>{handlePredict()}}>
-                Ask the AI 
-            </Button>
+        </div>
 
-            { showPrediction ?
-                <PredictionContainer 
-                    currentPrediction={currentPrediction}
-                />
-            :
-                <>
-                </>
-            }
-
-            <div className="instr">
-                    <t> This is how you create a text box if you need user input:</t>
-            </div>
-            <input
-                type="text"
-                value={text}
-                onChange={onChangeInput}
-            />
-
-
-            <div className="instr">
-                <t> This is how you can ask a multiple choice question.</t>
-            </div>    
-                <Radio.Group onChange={onChangeMultiple} value={choice}>
-                    <Radio value={1}> <t> Option 1</t></Radio>
-                    <Radio value={2}> <t> Option 2</t></Radio>
-                    <Radio value={3}> <t> Option 3</t></Radio>
-                </Radio.Group>
-
-            </div>
-            </div>
-
-
-            <div className="button-container"> 
-                <Button variant="btn btn-success"  style={{marginLeft:"70%"}}  onClick={nextChange}>
-                    Next
-                </Button>
-            </div>
-
-            {(moveToSurvey) && 
-            <div className="instr"> 
-                <t> You have completed the three tasks. </t>
-                
-            </div>
-            }
-
-            </div>
-
-        :
-            <> 
-            <h1> Loading ...</h1>
-            </>
-        }
-      </>
-       
-      );
+    
+    );
 }
 
 export default Main1Container;

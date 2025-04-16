@@ -4,13 +4,50 @@
     margin-left:15%;
     margin-right:15%;
   }
-  
+
+.Home {
+    background-color: #2153c5; 
+    min-height: 100vh;         
+    padding: 40px;                  
+}
+
 .Home .lander h1 {
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
+    color: white; 
 }
   
 .Home .lander p {
     color: rgb(28, 27, 27);
     font-size: 20px;
+    color: white; 
 }
+
+.button-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    width: 250px; 
+    margin: auto;
+    margin-top:15px;
+  }
+
+  .button-stack button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #69a2ff; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .label-container {
+    margin-top: 70px;
+  }
+  
+  .classification-label {
+    color:white;
+    font-size: 20px;
+    font-weight: bold; 
+  }

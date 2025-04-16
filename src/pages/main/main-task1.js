@@ -83,6 +83,16 @@ function Main1Container() {
         setShowPrediction(true);
     };
 
+    const handleEnd = () => {
+        let path = '/#'; 
+        window.location.assign(path);
+    };
+
+    const handleSubmit = () => {
+        let path = '/#'; 
+        window.location.assign(path);
+    };
+
     // testing communication with backend
     useEffect(() => {
         fetch('http://0.0.0.0:8080/time').then(res => 
@@ -128,15 +138,55 @@ function Main1Container() {
     return (
         <div className="background">
             <div className="video-grid">
-                <div className="video-box">1</div>
-                <div className="video-box">2</div>
-                <div className="video-box">3</div>
-                <div className="video-box">4</div>
-                <div className="video-box">5</div>
-                <div className="video-box">6</div>
+                <div className="video-box">Video 1</div>
+                <div className="video-box">Video 2</div>
+                <div className="video-box">Video 3</div>
+                <div className="video-box">Video 4</div>
+                <div className="video-box">Video 5</div>
+                <div className="video-box">Video 6</div>
+            </div> 
+            <div className="name-grid">
+                <div className="name-box">Asmitha Sathya</div>
+                <div className="name-box">Shaili Tripathi</div>
+                <div className="name-box">Julia Alumbro</div>
+                <div className="name-box">John Doe</div>
+                <div className="name-box">Mary Smith</div>
+                <div className="name-box">Calvin Klein</div>
             </div>
-
-            
+            <div className="expression-grid">
+                <div className="expression-box-1">Confused</div>
+                <div className="expression-box-2">Neutral</div>
+                <div className="expression-box-2">Neutral</div>
+                <div className="expression-box-2">Happy</div>
+                <div className="expression-box-1">Confused</div>
+                <div className="expression-box-2">Neutral</div>
+            </div>
+            <div className="black-box">
+                <div className="inner-title-box">Student Tracker</div>
+                <div className="inner-student-box">
+                    <div className="student-text-box">These students need attention:</div>
+                    <div className="student-text-box">1. Asmitha Sathya</div>
+                    <div className="student-text-box">2. Mary Smith</div>
+                </div>
+                <div className="inner-expression-box">
+                    <div className="student-text-box">Classify Student Expressions:</div>
+                    <div className="student-names">
+                        <div className="student-text-box">1. Asmitha Sathya</div>
+                        <div className="student-text-box">2. Shaili Tripathi</div>
+                        <div className="student-text-box">3. Julia Alumbro</div>
+                        <div className="student-text-box">4. John Doe</div>
+                        <div className="student-text-box">5. Mary Smith</div>
+                        <div className="student-text-box">6. Calvin Klein</div>
+                        <button className="submit-button" onClick={handleSubmit}>Submit</button>
+                    </div>
+                </div>
+            </div> 
+            <div className="bottom-bar">
+                <div className="zoom-menu-container">
+                    <img src="./zoom_bar.png" alt="Zoom Menu Bar" className="zoom-menu-bar" />
+                    <button className="end-button" onClick={handleEnd}>End</button>
+                </div>
+            </div>
         </div>
 
     

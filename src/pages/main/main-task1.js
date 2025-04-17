@@ -89,9 +89,19 @@ function Main1Container() {
     };
 
     const handleSubmit = () => {
-        let path = '/#'; 
+        let path = '/#/studentTracker'; 
         window.location.assign(path);
     };
+
+    const handleNameBoxAsmitha = () => {
+        let path = '/#/ExpandStudentExpressionAsmitha';
+        window.location.assign(path);
+    }
+
+    const handleNameBoxMary = () => {
+        let path = '/#/expandStudentExpressionMary';
+        window.location.assign(path);
+    }
 
     // testing communication with backend
     useEffect(() => {
@@ -137,30 +147,48 @@ function Main1Container() {
 
     return (
         <div className="background">
-            <div className="video-grid">
-                <div className="video-box">Video 1</div>
-                <div className="video-box">Video 2</div>
-                <div className="video-box">Video 3</div>
-                <div className="video-box">Video 4</div>
-                <div className="video-box">Video 5</div>
-                <div className="video-box">Video 6</div>
-            </div> 
-            <div className="name-grid">
-                <div className="name-box">Asmitha Sathya</div>
-                <div className="name-box">Shaili Tripathi</div>
-                <div className="name-box">Julia Alumbro</div>
-                <div className="name-box">John Doe</div>
-                <div className="name-box">Mary Smith</div>
-                <div className="name-box">Calvin Klein</div>
+
+            <div className="main-left-side">
+                <div className="row">
+                    <div className="video-box">
+                        <p>Video 1</p>
+                        <div className="name-box" onClick={handleNameBoxAsmitha}>Asmitha Sathya</div>
+                        <div className="expression-box-1">Confused</div>
+                    </div>
+                    <div className="video-box">
+                        <p>Video 2</p>
+                        <div className="name-box">Julia Alumbro</div>
+                        <div className="expression-box-2">Neutral</div>
+                    </div>
+                    <div className="video-box">
+                        <p>Video 3</p>
+                        <div className="name-box">John Doe</div>
+                        <div className="expression-box-2">Neutral</div>
+                    </div>
+                </div>
+
+                <div className="space"></div>
+
+                <div className="row">
+                    <div className="video-box">
+                        <p>Video 4</p>
+                        <div className="name-box" onClick={handleNameBoxMary}>Mary Smith</div>
+                        <div className="expression-box-1">Confused</div>
+                    </div>
+                    <div className="video-box">
+                        <p>Video 5</p>
+                        <div className="name-box">Shaili Tripathi</div>
+                        <div className="expression-box-2">Happy</div>
+                    </div>
+                    <div className="video-box">
+                        <p>Video 6</p>
+                        <div className="name-box">Calvin Klein</div>
+                        <div className="expression-box-2">Neutral</div>
+                    </div>
+                </div> 
             </div>
-            <div className="expression-grid">
-                <div className="expression-box-1">Confused</div>
-                <div className="expression-box-2">Neutral</div>
-                <div className="expression-box-2">Neutral</div>
-                <div className="expression-box-2">Happy</div>
-                <div className="expression-box-1">Confused</div>
-                <div className="expression-box-2">Neutral</div>
-            </div>
+
+
             <div className="black-box">
                 <div className="inner-title-box">Student Tracker</div>
                 <div className="inner-student-box">
@@ -181,14 +209,15 @@ function Main1Container() {
                     </div>
                 </div>
             </div> 
+
+
             <div className="bottom-bar">
                 <div className="zoom-menu-container">
-                    <img src="./zoom_bar.png" alt="Zoom Menu Bar" className="zoom-menu-bar" />
                     <button className="end-button" onClick={handleEnd}>End</button>
+                    <img src="./zoom_bar.png" alt="Zoom Menu Bar" className="zoom-menu-bar" />
                 </div>
             </div>
         </div>
-
     
     );
 }

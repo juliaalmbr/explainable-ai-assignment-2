@@ -8,6 +8,9 @@ import Main1Container from "./pages/main/main-task1";
 import Main2Container from "./pages/main/main-task2";
 import SurveyContainer from "./pages/survey/survey"
 import EndContainer from "./pages/end/end";
+import expandStudentExpressionAsmitha from "./pages/main/expand-student-expression-asmitha"
+import expandStudentExpressionMary from "./pages/main/expand-student-expression-mary"
+import studentTracker from "./pages/main/student-tracker"
 
 
 export default class Routes extends Component {
@@ -21,7 +24,9 @@ export default class Routes extends Component {
                     <Route path="/Main2" component={Main2Container} />
                     <Route path="/Survey" component={SurveyContainer} />
                     <Route path="/End" component={EndContainer} />
-
+                    <Route path="/ExpandStudentExpressionAsmitha" component={expandStudentExpressionAsmitha} />
+                    <Route path="/ExpandStudentExpressionMary" component={expandStudentExpressionMary} />
+                    <Route path="/studentTracker" component={studentTracker} />
                 </Switch>
             </HashRouter>
 

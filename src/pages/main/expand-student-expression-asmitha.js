@@ -70,20 +70,27 @@ function expandStudentExpressionAsmitha() {
 
 
             <div className="black-box">
-                <div className="inner-title-box">Asmitha Sathya</div>
-                <div className="inner-student-box">
-                    <div className="expanded-pfp">Profile Picture Here</div>
+            <div className="inner-title-box">Asmitha Sathya</div>
+            <div className="inner-student-box">
+            <div className="expanded-pfp">
+                <img 
+                    src="/asmitha_confused.jpg" 
+                    alt="Confused student" 
+                    style={{ width: '300px', height: '300px' }} 
+                />
+            </div>
+            </div>
+
+            <div className="inner-expression-box">
+                <div className="student-text-box">This student looks confused:</div>
+                <div className="student-names">
+                <div className="student-text-box">1. Furrowed Eyebrows</div>
+                <div className="student-text-box">2. Frown</div>
+                <div className="student-text-box">3. Student looks down for 60% of the lecture</div>
+                <button className="back-button" onClick={handleBack}>Back</button>
                 </div>
-                <div className="inner-expression-box">
-                    <div className="student-text-box">This student looks confused:</div>
-                    <div className="student-names">
-                        <div className="student-text-box">1. Furrowed Eyebrows</div>
-                        <div className="student-text-box">2. Frown</div>
-                        <div className="student-text-box">3. Student looks down for 60% of the lecture</div>
-                        <button className="back-button" onClick={handleBack}>Back</button>
-                    </div>
-                </div>
-            </div> 
+            </div>
+            </div>
 
 
             <div className="bottom-bar">

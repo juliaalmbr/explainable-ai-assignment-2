@@ -1,15 +1,17 @@
-import React, { Component, useState, useEffect } from "react";
-import { Button, Modal, Checkbox, Input, Radio } from 'antd';
-import { Select } from 'antd'; // move this here
-import "antd/dist/antd.css";
-import "./main.css";
+import React, { useState, useEffect } from "react"; // React and hooks first
+import { useHistory } from 'react-router-dom'; // Router hooks next
+import { Button, Modal, Checkbox, Input, Radio, Select } from 'antd'; // Third-party libraries grouped
+import "antd/dist/antd.css"; // CSS imports come after JS libraries
+import "./main.css"; // Your local styles last
 
 import PredictionContainer from '../../components/predictionContainer';
+
 
 const { Option } = Select;
 
 
 function Main1Container() {
+    const history = useHistory();
     const [text, setText] = useState("");
     const [task, setTask] = useState(0);
     const [choice, setChoice] = useState(0);
@@ -99,9 +101,9 @@ function Main1Container() {
     };
 
     const handleNameBoxAsmitha = () => {
-        let path = '/#/ExpandStudentExpressionAsmitha';
-        window.location.assign(path);
-    }
+        history.push('/ExpandStudentExpressionAsmitha'); 
+    };
+    
 
     const handleNameBoxMary = () => {
         let path = '/#/expandStudentExpressionMary';
@@ -157,17 +159,17 @@ function Main1Container() {
             <div className="main-left-side">
                 <div className="row">
                     <div className="video-box">
-                        <p>Video 1</p>
+                        <img src="/asmitha.jpg" alt="Asmitha Sathya" className="video-thumbnail" />
                         <div className="name-box" onClick={handleNameBoxAsmitha}>Asmitha Sathya</div>
                         <div className="expression-box-1">Confused</div>
                     </div>
                     <div className="video-box">
-                        <p>Video 2</p>
+                        <img src="/julia.jpg" alt="Julia Alumbro" className="video-thumbnail" />
                         <div className="name-box">Julia Alumbro</div>
                         <div className="expression-box-2">Neutral</div>
                     </div>
                     <div className="video-box">
-                        <p>Video 3</p>
+                        <img src="/john.jpg" alt="John Doe" className="video-thumbnail" />
                         <div className="name-box">John Doe</div>
                         <div className="expression-box-2">Neutral</div>
                     </div>
@@ -177,19 +179,19 @@ function Main1Container() {
 
                 <div className="row">
                     <div className="video-box">
-                        <p>Video 4</p>
+                        <img src="/mary.jpg" alt="Mary Smith" className="video-thumbnail" />
                         <div className="name-box" onClick={handleNameBoxMary}>Mary Smith</div>
                         <div className="expression-box-1">Confused</div>
                     </div>
                     <div className="video-box">
-                        <p>Video 5</p>
+                        <img src="/shaili.jpg" alt="Shaili Tripathi" className="video-thumbnail" />
                         <div className="name-box">Shaili Tripathi</div>
                         <div className="expression-box-2">Happy</div>
                     </div>
                     <div className="video-box">
-                        <p>Video 6</p>
+                        <img src="/calvin.jpg" alt="Calvin Klein" className="video-thumbnail" />
                         <div className="name-box">Calvin Klein</div>
-                        <div className="expression-box-2">Neutral</div>
+                        <div className="expression-box-2">Happy</div>
                     </div>
                 </div> 
             </div>

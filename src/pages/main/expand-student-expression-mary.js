@@ -70,10 +70,16 @@ function expandStudentExpressionMary() {
 
 
             <div className="black-box">
-                <div className="inner-title-box">Mary Smith</div>
-                <div className="inner-student-box">
-                    <div className="expanded-pfp">Profile Picture Here</div>
-                </div>
+            <div className="inner-title-box">Asmitha Sathya</div>
+            <div className="inner-student-box">
+            <div className="expanded-pfp">
+                <img 
+                    src="/confused_mary.jpg" 
+                    alt="Confused student" 
+                    style={{ width: '300px', height: '300px' }} 
+                />
+            </div>
+            </div>
                 <div className="inner-expression-box">
                     <div className="student-text-box">This student looks confused:</div>
                     <div className="student-names">

@@ -207,7 +207,8 @@ function Main1Container() {
                     <div className="student-names">
                         <div className="student-entry">
                             <div className="student-text-box">1. Asmitha Sathya</div>
-                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
+                                <Option value="Neutral">Neutral</Option>
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
@@ -215,7 +216,8 @@ function Main1Container() {
                         </div>
                         <div className="student-entry">
                             <div className="student-text-box">2. Shaili Tripathi</div>
-                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
+                                <Option value="Neutral">Neutral</Option>
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
@@ -223,7 +225,8 @@ function Main1Container() {
                         </div>
                         <div className="student-entry">
                             <div className="student-text-box">3. Julia Alumbro</div>
-                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
+                                <Option value="Neutral">Neutral</Option>
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
@@ -231,7 +234,7 @@ function Main1Container() {
                         </div>
                         <div className="student-entry">
                             <div className="student-text-box">4. John Doe</div>
-                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
@@ -239,7 +242,7 @@ function Main1Container() {
                         </div>
                         <div className="student-entry">
                             <div className="student-text-box">5. Mary Smith</div>
-                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
@@ -247,7 +250,7 @@ function Main1Container() {
                         </div>
                         <div className="student-entry">
                             <div className="student-text-box">6. Calvin Klein</div>
-                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>

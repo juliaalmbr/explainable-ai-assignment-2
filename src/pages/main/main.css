@@ -5,29 +5,37 @@
 }
 
 .background {
-    background-color: black; 
-    padding: 120px;
+    position: relative; 
+    width: 100%;
+    height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    background-color: black;
 }
 
 .row {
     display:flex;
     justify-content: space-evenly;
+    background-color: black;
 }
 
 .space {
     margin-top: 7%;
+    background-color: black;
 }
 
 .main-left-side{
-    background-color: blakc;
-    width:80vw;
+    position: relative;
+    z-index: 1;
+    width: 75%;
+    height: 100%;
+    padding: 20px;
+    background-color: black;
 }
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(3, 20%); /* 3 columns */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
     grid-template-rows: repeat(2, 200px); /* 2 rows */
     column-gap: 50px; /* No horizontal gap */
     row-gap: 250px;
@@ -43,6 +51,7 @@
     height: 350px;
     background-color: #233C67; 
     border-radius: 10px;
+    border: 3px solid black;
     /*display: flex;
     justify-content: center;
     align-items: center;*/
@@ -77,6 +86,10 @@
     border-color:white;
     font-size: 20px;
     font-family: 'Kaleko', Geneva;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; 
 }
 
 .expression-grid {
@@ -88,6 +101,8 @@
     margin-top: -585px;
     margin-left: 20px;
     justify-items: center;
+    position: relative; 
+    z-index: 1;
 }
 
 .expression-box-1 {
@@ -103,6 +118,10 @@
     align-items: center;*/
     font-size: 20px; 
     font-family: 'Kaleko', Geneva;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; 
 }
 
 .expanded-pfp {
@@ -110,7 +129,7 @@
     width:60%;
     margin:auto;
     background-color: #222222;
-    color:white;
+    color:black;
 }
 
 
@@ -127,23 +146,25 @@
     align-items: center;*/
     font-size: 20px;
     font-family: 'Kaleko', Geneva;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; 
 }
 
 .black-box {
-    /*position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
-    width: 800px;*/
-    height: 90vh;
-    background: #233C67;
-    /*margin-right: 30px;
-    margin-top: 35px;*/
-    border-radius: 10px;
-    margin-left:50px;
-    padding:7px;
-    width: 35%;
-
-  }
+    width: 25%;
+    min-width: 400px;
+    height: 100%;
+    background-color: #233C67;
+    z-index: 2; 
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
 
 .inner-title-box {
     background-color: lightgray; 
@@ -165,7 +186,7 @@
     background-color: lightgray; 
     color: black; 
     width: 95%;
-    height: 25%; 
+    height: 22%; 
     justify-content: center; 
     align-items: center; 
     border-radius: 10px; 
@@ -173,11 +194,28 @@
     margin-top: 7px;
     font-size: 24px; 
     font-family: 'Kaleko', Geneva;
+    overflow: hidden;
 }
 
 .classification-text{
     padding:10px;
     font-size: 50px; 
+}
+
+.student-text-title {
+    color: black;
+    width: 130%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: left;
+    display: block;
+    font-size: 100%;
+    font-family: 'Kaleko', Geneva;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; 
 }
 
 .student-text-box {
@@ -190,13 +228,19 @@
     display: block;
     font-size: 100%;
     font-family: 'Kaleko', Geneva;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
 }
 
 .inner-expression-box {
     background-color: lightgray;
     color: black;
     width: 95%;
-    height: 60%;
+    height: auto;
+    min-height: 57%;
+    position: relative;
     justify-content: center; 
     align-items: center; 
     border-radius: 10px;
@@ -204,17 +248,14 @@
     margin-top: 7px;
     font-size: 24px;
     font-family: 'Kaleko', Geneva;
-}
-
-.student-names {
-    width: 50%;
-    margin-left: 40px;
-    padding: 5px;
-    border-radius: 8px;
-    gap: 10px;
+    padding: 15px;
+    overflow: hidden;
 }
 
 .submit-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
     background-color: #222222;
     width: 120px; 
     color: white;
@@ -231,6 +272,26 @@
 .submit-button:hover {
     background-color: #555555; 
 }
+
+.student-names {
+    position: absolute;
+    left: 0; 
+    top: 75px;
+    width: 80%;
+    bottom: 15px;
+    margin-left: 30px;
+    padding: 0;
+    border-radius: 8px;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.student-entry {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 8px; 
+}
+
 
 .bottom-bar {
     width:100%;
@@ -428,11 +489,6 @@ t {
     height: 80%
 }
 
-.student-entry {
-    display: flex;
-    align-items: center; 
-    margin-bottom: 8px; 
-  }
   
   .student-text {
     font-size: 12px;

@@ -198,12 +198,12 @@ function Main1Container() {
             <div className="black-box">
                 <div className="inner-title-box">Student Tracker</div>
                 <div className="inner-student-box">
-                    <div className="student-text-box">These students need attention:</div>
+                    <div className="student-text-title">These students need attention:</div>
                     <div className="student-text-box">1. Asmitha Sathya</div>
                     <div className="student-text-box">2. Mary Smith</div>
                 </div>
                 <div className="inner-expression-box">
-                    <div className="student-text-box">Classify Student Expressions:</div>
+                    <div className="student-text-title">Classify Student Expressions:</div>
                     <div className="student-names">
                         <div className="student-entry">
                             <div className="student-text-box">1. Asmitha Sathya</div>

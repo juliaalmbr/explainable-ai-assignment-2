@@ -1,9 +1,13 @@
 import React, { Component, useState, useEffect } from "react";
-import {Button, Modal, Checkbox, Input, Radio} from 'antd'
+import { Button, Modal, Checkbox, Input, Radio } from 'antd';
+import { Select } from 'antd'; // move this here
 import "antd/dist/antd.css";
 import "./main.css";
 
-import PredictionContainer from '../../components/predictionContainer'
+import PredictionContainer from '../../components/predictionContainer';
+
+const { Option } = Select;
+
 
 function Main1Container() {
     const [text, setText] = useState("");
@@ -21,6 +25,7 @@ function Main1Container() {
     const [moveToSurvey, setMoveToSurvey] = useState(false);
 
     const [render, setRender] = useState(false);
+    const expressionOptions = ["Happy", "Sad", "Confused"];
 
     let totalImages = 3;
     const baseImgUrl = "./";
@@ -146,6 +151,7 @@ function Main1Container() {
 
 
     return (
+        <div>
         <div className="background">
 
             <div className="main-left-side">
@@ -199,14 +205,61 @@ function Main1Container() {
                 <div className="inner-expression-box">
                     <div className="student-text-box">Classify Student Expressions:</div>
                     <div className="student-names">
-                        <div className="student-text-box">1. Asmitha Sathya</div>
-                        <div className="student-text-box">2. Shaili Tripathi</div>
-                        <div className="student-text-box">3. Julia Alumbro</div>
-                        <div className="student-text-box">4. John Doe</div>
-                        <div className="student-text-box">5. Mary Smith</div>
-                        <div className="student-text-box">6. Calvin Klein</div>
+                        <div className="student-entry">
+                            <div className="student-text-box">1. Asmitha Sathya</div>
+                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                                <Option value="Happy">Happy</Option>
+                                <Option value="Sad">Sad</Option>
+                                <Option value="Confused">Confused</Option>
+                            </Select>
+                        </div>
+                        <div className="student-entry">
+                            <div className="student-text-box">2. Shaili Tripathi</div>
+                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                                <Option value="Happy">Happy</Option>
+                                <Option value="Sad">Sad</Option>
+                                <Option value="Confused">Confused</Option>
+                            </Select>
+                        </div>
+                        <div className="student-entry">
+                            <div className="student-text-box">3. Julia Alumbro</div>
+                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                                <Option value="Happy">Happy</Option>
+                                <Option value="Sad">Sad</Option>
+                                <Option value="Confused">Confused</Option>
+                            </Select>
+                        </div>
+                        <div className="student-entry">
+                            <div className="student-text-box">4. John Doe</div>
+                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                                <Option value="Happy">Happy</Option>
+                                <Option value="Sad">Sad</Option>
+                                <Option value="Confused">Confused</Option>
+                            </Select>
+                        </div>
+                        <div className="student-entry">
+                            <div className="student-text-box">5. Mary Smith</div>
+                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                                <Option value="Happy">Happy</Option>
+                                <Option value="Sad">Sad</Option>
+                                <Option value="Confused">Confused</Option>
+                            </Select>
+                        </div>
+                        <div className="student-entry">
+                            <div className="student-text-box">6. Calvin Klein</div>
+                            <Select style={{ width: 120, marginLeft: '1rem' }} placeholder="Select">
+                                <Option value="Happy">Happy</Option>
+                                <Option value="Sad">Sad</Option>
+                                <Option value="Confused">Confused</Option>
+                            </Select>
+                        </div>
+
                         <button className="submit-button" onClick={handleSubmit}>Submit</button>
                     </div>
+                </div>
+
+
+
                 </div>
             </div> 
 

@@ -427,3 +427,16 @@ t {
     width: 100%;
     height: 80%
 }
+
+.student-entry {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 8px; 
+  }
+  
+  .student-text {
+    font-size: 12px;
+    margin-right: 10px; 
+  }
+  
+  

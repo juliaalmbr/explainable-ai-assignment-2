@@ -95,10 +95,28 @@ function Main1Container() {
         window.location.assign(path);
     };
 
+    const [accuracy, setAccuracy] = useState(0);
     const handleSubmit = () => {
+
+        const hasUnselected = Object.values(expressionSelections).includes("Select");
+        if (hasUnselected) {
+            window.alert("Please select an option for all students.");
+            return;
+        } 
+
+        // calculate the accuracy
+        const numCorrect = Object.keys(expressionSelections).filter((key) => {
+            return expressionSelections[key] === expressionKey[key]; // Compare selection with correct answer
+        }).length;
+
+        const accuracy = numCorrect / Object.keys(expressionKey).length;
+        setAccuracy(accuracy);
+
         let path = '/#/studentTracker'; 
         window.location.assign(path);
+        
     };
+
 
     const handleNameBoxAsmitha = () => {
         history.push('/ExpandStudentExpressionAsmitha'); 
@@ -106,6 +124,7 @@ function Main1Container() {
     
 
     const handleNameBoxMary = () => {
+        
         let path = '/#/expandStudentExpressionMary';
         window.location.assign(path);
     }
@@ -151,6 +170,30 @@ function Main1Container() {
     }, []);
 
 
+    const [expressionSelections, setExpressionSelections] = useState({
+        "Asmitha Sathya": "Select",
+        "Shaili Tripathi": "Select",
+        "Julia Alumbro": "Select",
+        "John Doe": "Select",
+        "Mary Smith": "Select",
+        "Calvin Klein": "Select"
+    });  
+    const expressionKey = {
+        "Asmitha Sathya": "Confused",
+        "Shaili Tripathi": "Happy",
+        "Julia Alumbro": "Neutral",
+        "John Doe": "Neutral",
+        "Mary Smith": "Confused",
+        "Calvin Klein": "Happy"
+    };
+
+    const handleSelect = (value, studentName) => {
+        setExpressionSelections(prev => ({
+            ...prev,
+            [studentName]: value
+        }));
+        console.log(expressionSelections)
+    }
 
     return (
         <div>
@@ -209,7 +252,11 @@ function Main1Container() {
                     <div className="student-names">
                         <div className="student-entry">
                             <div className="student-text-box">1. Asmitha Sathya</div>
-                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
+                            <Select 
+                                style={{ width: '200px', marginLeft: '1rem' }} 
+                                placeholder="Select" 
+                                onChange={(value) => handleSelect(value, "Asmitha Sathya")}
+                            >
                                 <Option value="Neutral">Neutral</Option>
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
@@ -218,7 +265,10 @@ function Main1Container() {
                         </div>
                         <div className="student-entry">
                             <div className="student-text-box">2. Shaili Tripathi</div>
-                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} 
+                                placeholder="Select" 
+                                onChange={(value) => handleSelect(value, "Shaili Tripathi")}
+                            >
                                 <Option value="Neutral">Neutral</Option>
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
@@ -227,7 +277,10 @@ function Main1Container() {
                         </div>
                         <div className="student-entry">
                             <div className="student-text-box">3. Julia Alumbro</div>
-                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} 
+                                placeholder="Select" 
+                                onChange={(value) => handleSelect(value, "Julia Alumbro")}
+                            >
                                 <Option value="Neutral">Neutral</Option>
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
@@ -236,7 +289,10 @@ function Main1Container() {
                         </div>
                         <div className="student-entry">
                             <div className="student-text-box">4. John Doe</div>
-                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} 
+                                placeholder="Select" 
+                                onChange={(value) => handleSelect(value, "John Doe")}
+                            >
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
@@ -244,7 +300,10 @@ function Main1Container() {
                         </div>
                         <div className="student-entry">
                             <div className="student-text-box">5. Mary Smith</div>
-                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} 
+                                placeholder="Select" 
+                                onChange={(value) => handleSelect(value, "Mary Smith")}
+                            >
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
@@ -252,7 +311,10 @@ function Main1Container() {
                         </div>
                         <div className="student-entry">
                             <div className="student-text-box">6. Calvin Klein</div>
-                            <Select style={{ width: '200px', marginLeft: '1rem' }} placeholder="Select">
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} 
+                                placeholder="Select" 
+                                onChange={(value) => handleSelect(value, "Calvin Klein")}
+                            >
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>

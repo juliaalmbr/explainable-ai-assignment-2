@@ -35,7 +35,7 @@ function Main1Container() {
     const nextChange = () =>{
         if (choice<1) {
             alert("Please make sure to complete all the fields!");
-        } else {
+         } else {
             let count = imageCount + 1;
             // save data
             let data = {
@@ -101,6 +101,7 @@ function Main1Container() {
         const hasUnselected = Object.values(expressionSelections).includes("Select");
         if (hasUnselected) {
             window.alert("Please select an option for all students.");
+            setShowStudentTracker(false);
             return;
         } 
 
@@ -139,14 +140,14 @@ function Main1Container() {
     }
 
     const handleNameBoxShaili = () => {
-        setSelectedStudent({ name: "Shaili Tripathi", expression: "Happy" });
+        setSelectedStudent({ name: "Shaili Tripathi", expression: "Neutral" });
     }
 
     const handleNameBoxMary = () => {
         /* 
         let path = '/#/expandStudentExpressionMary';
         window.location.assign(path);*/
-        setSelectedStudent({ name: "Mary Smith", expression: "Confused" });
+        setSelectedStudent({ name: "Mary Smith", expression: "Angry" });
     }
 
     // testing communication with backend
@@ -207,6 +208,15 @@ function Main1Container() {
         "Calvin Klein": "Happy"
     };
 
+    const expressionKeyIncorrect = {
+        "Asmitha Sathya": "Confused",
+        "Shaili Tripathi": "Neutral",
+        "Julia Alumbro": "Neutral",
+        "John Doe": "Neutral",
+        "Mary Smith": "Angry",
+        "Calvin Klein": "Happy"
+    };
+
     const handleSelect = (value, studentName) => {
         setExpressionSelections(prev => ({
             ...prev,
@@ -220,7 +230,7 @@ function Main1Container() {
     /* This is everything on the main page with selection boxes */ 
     const DefaultRightPanel = ({ handleSelect, expressionSelections, handleSubmit }) => (
         <div className="black-box">
-                <div className="inner-title-box">Student Tracker</div>
+                <div className="inner-title-box">STUDENT TRACKER</div>
                 <div className="inner-student-box">
                     <div className="student-text-title">These students need attention:</div>
                     <div className="student-text-box">1. Asmitha Sathya</div>
@@ -241,23 +251,11 @@ function Main1Container() {
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
+                                <Option value="Angry">Angry</Option>
                             </Select>
                         </div>
                         <div className="student-entry">
-                            <div className="student-text-box">2. Shaili Tripathi</div>
-                            <Select style={{ width: '200px', marginLeft: '1rem' }} 
-                                placeholder="Select" 
-                                onChange={(value) => handleSelect(value, "Shaili Tripathi")}
-                                value={expressionSelections["Shaili Tripathi"]}
-                            >
-                                <Option value="Neutral">Neutral</Option>
-                                <Option value="Happy">Happy</Option>
-                                <Option value="Sad">Sad</Option>
-                                <Option value="Confused">Confused</Option>
-                            </Select>
-                        </div>
-                        <div className="student-entry">
-                            <div className="student-text-box">3. Julia Alumbro</div>
+                            <div className="student-text-box">2. Julia Alumbro</div>
                             <Select style={{ width: '200px', marginLeft: '1rem' }} 
                                 placeholder="Select" 
                                 onChange={(value) => handleSelect(value, "Julia Alumbro")}
@@ -267,10 +265,11 @@ function Main1Container() {
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
+                                <Option value="Angry">Angry</Option>
                             </Select>
                         </div>
                         <div className="student-entry">
-                            <div className="student-text-box">4. John Doe</div>
+                            <div className="student-text-box">3. John Doe</div>
                             <Select style={{ width: '200px', marginLeft: '1rem' }} 
                                 placeholder="Select" 
                                 onChange={(value) => handleSelect(value, "John Doe")}
@@ -280,10 +279,11 @@ function Main1Container() {
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
+                                <Option value="Angry">Angry</Option>
                             </Select>
                         </div>
                         <div className="student-entry">
-                            <div className="student-text-box">5. Mary Smith</div>
+                            <div className="student-text-box">4. Mary Smith</div>
                             <Select style={{ width: '200px', marginLeft: '1rem' }} 
                                 placeholder="Select" 
                                 onChange={(value) => handleSelect(value, "Mary Smith")}
@@ -293,6 +293,21 @@ function Main1Container() {
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
+                                <Option value="Angry">Angry</Option>
+                            </Select>
+                        </div>
+                        <div className="student-entry">
+                            <div className="student-text-box">5. Shaili Tripathi</div>
+                            <Select style={{ width: '200px', marginLeft: '1rem' }} 
+                                placeholder="Select" 
+                                onChange={(value) => handleSelect(value, "Shaili Tripathi")}
+                                value={expressionSelections["Shaili Tripathi"]}
+                            >
+                                <Option value="Neutral">Neutral</Option>
+                                <Option value="Happy">Happy</Option>
+                                <Option value="Sad">Sad</Option>
+                                <Option value="Confused">Confused</Option>
+                                <Option value="Angry">Angry</Option>
                             </Select>
                         </div>
                         <div className="student-entry">
@@ -302,9 +317,11 @@ function Main1Container() {
                                 onChange={(value) => handleSelect(value, "Calvin Klein")}
                                 value={expressionSelections["Calvin Klein"]}
                             >
+                                <Option value="Neutral">Neutral</Option>
                                 <Option value="Happy">Happy</Option>
                                 <Option value="Sad">Sad</Option>
                                 <Option value="Confused">Confused</Option>
+                                <Option value="Angry">Angry</Option>
                             </Select>
                         </div>
 
@@ -321,7 +338,7 @@ function Main1Container() {
     /* This should make it so that we only change the right side components*/ 
     const ExpandedRightPanel = ({ studentName, handleBack }) => {
 
-        const expression = expressionKey[studentName];
+        const expression = expressionKeyIncorrect[studentName];
 
         const studentImages = {
           "Asmitha Sathya": "/asmitha_confused.jpg",
@@ -339,8 +356,8 @@ function Main1Container() {
             "Student looks down for 60% of the lecture"
           ],
           "Mary Smith": [
-            "Blank stare",
-            "Tapping pencil",
+            "Furrowed Eyebrows",
+            "Narrowed Eyes",
             "Did not respond to cold call"
           ],
           "Julia Alumbro": [
@@ -354,9 +371,9 @@ function Main1Container() {
             "Covert expressions"
           ],
           "Shaili Tripathi":[
-            "Duchenne marker",
+            "No duchenne marker",
             "Slightly raised eyebrows ",
-            "Smiles for 55% of lecture"
+            "Relaxed cheeks"
           ],
           "Calvin Klein":[
             "Duchenne marker",
@@ -436,12 +453,12 @@ function Main1Container() {
                     <div className="video-box">
                         <img src="/mary.jpg" alt="Mary Smith" className="video-thumbnail" />
                         <div className="name-box" onClick={handleNameBoxMary}>Mary Smith</div>
-                        <div className="expression-box-1">Confused</div>
+                        <div className="expression-box-1">Angry</div>
                     </div>
                     <div className="video-box">
                         <img src="/shaili.jpg" alt="Shaili Tripathi" className="video-thumbnail" />
                         <div className="name-box" onClick={handleNameBoxShaili}>Shaili Tripathi</div>
-                        <div className="expression-box-2">Happy</div>
+                        <div className="expression-box-2">Neutral</div>
                     </div>
                     <div className="video-box">
                         <img src="/calvin.jpg" alt="Calvin Klein" className="video-thumbnail" />

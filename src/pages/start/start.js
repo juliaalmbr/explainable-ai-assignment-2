@@ -7,7 +7,7 @@ import "./start.css";
 function StartContainer() {
     // let history = useHistory();
     const withoutAI = () =>{ 
-      let path = '/#/Instructions';  // TO - DO Modify instr file for the pages without AI assistance
+      let path = '/#/Main2';  // TO - DO Modify instr file for the pages without AI assistance
       // history.push(path);
       window.location.assign(path);
       console.log('moving to instructions page')

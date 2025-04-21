@@ -335,7 +335,7 @@ function Main1Container() {
         setSelectedStudent(null);
     };
 
-    /* This should make it so that we only change the right side components*/ 
+    /* We change the right side panel to expand each student classification (confused, neutral, etc) */ 
     const ExpandedRightPanel = ({ studentName, handleBack }) => {
 
         const expression = expressionKeyIncorrect[studentName];

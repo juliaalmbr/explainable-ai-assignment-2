@@ -26,12 +26,12 @@ function StartContainer() {
             <h1>AI-ASSISTED STUDENT TRACKER</h1>
             <p> This tool is designed to help online instructors better understand
                 student engagement by automatically detecting facial expressions such as
-                confusion, boredom, or distraction during virtual classes. Using a deep learning
-                model, the system analyzes real-time video input to classify expressions and highlight
-                which students may need additional attention. Instructors can view ranked engagement
-                insights and explore visual explanations showing what facial features influenced each
-                prediction. This assistant aims to support more effective teaching by combining human
-                intuition and AI-driven insights</p>
+                happy, sad, angry, neutral, and confusion during virtual classes and alerting the 
+                instructor of those who seem confused. Using a deep learning model, the system analyzes 
+                real-time video input to classify expressions and highlight which students may need 
+                additional attention. Instructors can view ranked engagement insights and explore 
+                visual explanations showing what facial features influenced each prediction. This assistant 
+                aims to support more effective teaching by combining human intuition and AI-driven insights.</p>
 
             <div className="label-container">
                 <label className="classification-label">Classification Tests: </label>

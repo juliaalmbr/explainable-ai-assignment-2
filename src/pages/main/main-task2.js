@@ -231,11 +231,6 @@ function Main2Container() {
     const DefaultRightPanel = ({ handleSelect, expressionSelections, handleSubmit }) => (
         <div className="black-box">
                 <div className="inner-title-box">STUDENT TRACKER</div>
-                <div className="inner-student-box">
-                    <div className="student-text-title">These students need attention:</div>
-                    <div className="student-text-box">1. Asmitha Sathya</div>
-                    <div className="student-text-box">2. Mary Smith</div>
-                </div>
                 <div className="inner-expression-box">
                     <div className="student-text-title">Classify Student Expressions:</div>
                     <div className="student-names">
